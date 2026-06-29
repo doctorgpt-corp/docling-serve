@@ -58,6 +58,8 @@ jobs:
 
       - name: Check out the repo
         uses: actions/checkout@v5
+        with:
+          persist-credentials: false
 
       - name: Log in to the GHCR container image registry
         if: ${{ inputs.publish }}
