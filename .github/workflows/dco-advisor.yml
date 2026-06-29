@@ -4,13 +4,14 @@ on:
   pull_request_target:
     types: [opened, reopened, synchronize]
 
-permissions:
-  pull-requests: write
-  issues: write
+permissions: {}
 
 jobs:
   dco_advisor:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      issues: write
     steps:
       - name: Handle DCO check result
         uses: actions/github-script@v7
